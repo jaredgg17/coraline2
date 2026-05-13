@@ -122,7 +122,11 @@ export default function InfoModal({ isOpen, onClose, title, iconSrc, iconAlt, ch
             transition={{ type: 'spring', stiffness: 320, damping: 26, mass: 0.9 }}
             onClick={e => e.stopPropagation()}
             className="glass relative rounded-3xl w-[88%] max-w-xs"
-            style={{ padding: '36px 28px 28px' }}
+            style={{
+              padding: 'clamp(28px, 6vw, 36px) clamp(20px, 5vw, 28px) clamp(20px, 5vw, 28px)',
+              maxHeight: '85dvh',
+              overflowY: 'auto',
+            }}
           >
             {/* Top shimmer border accent */}
             <div

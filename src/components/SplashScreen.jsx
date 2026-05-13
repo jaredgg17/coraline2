@@ -53,49 +53,37 @@ export default function SplashScreen({ onEnter }) {
       <div
         className="glass"
         style={{
-          width: 'min(280px, 80vw)',
-          minHeight: 380,
+          width: 'min(300px, 85vw)',
+          height: 'min(420px, 72dvh)',
           borderRadius: 0,
           border: '0px solid rgba(0, 230, 255, 0.35)',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'flex-end',
-          padding: '24px',
+          padding: '20px',
           position: 'relative',
+          overflow: 'hidden',
           boxShadow:
             '0 0 40px rgba(0, 200, 255, 0.15), inset 0 0 30px rgba(0, 100, 180, 0.1)',
         }}
       >
-        {/* Placeholder para la imagen del usuario */}
+        {/* Imagen de portada */}
         <div
           style={{
             position: 'absolute',
             top: 0,
             left: 0,
             right: 0,
-            bottom: 80,
-            borderRadius: '24px 24px 0 0',
-            background: 'transparent',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexDirection: 'column',
-            gap: 8,
+            bottom: 72,
+            overflow: 'hidden',
           }}
         >
-          <span style={{ fontSize: 52, opacity: 0.4 }}></span>
-          <p
-            style={{
-              color: 'rgba(144, 224, 239, 0.4)',
-              fontSize: 11,
-              fontFamily: '"Cormorant Garamond", serif',
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-            }}
-          >
-            <img src="https://raw.githubusercontent.com/jaredgg17/audio/main/IMG-20260511-WA0043.jpg" alt="" />
-          </p>
+          <img
+            src="https://raw.githubusercontent.com/jaredgg17/audio/main/IMG-20260511-WA0043.jpg"
+            alt="Coraline"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+          />
         </div>
 
         {/* Texto de acción */}
@@ -119,10 +107,12 @@ export default function SplashScreen({ onEnter }) {
         className="font-body"
         style={{
           color: 'rgba(144, 224, 239, 0.5)',
-          fontSize: 20,
+          fontSize: 'clamp(14px, 4vw, 20px)',
           fontStyle: 'italic',
-          marginTop: 20,
+          marginTop: 16,
           letterSpacing: '0.06em',
+          textAlign: 'center',
+          padding: '0 12px',
         }}
       >
         !Preparate para sumergirte en la aventura!

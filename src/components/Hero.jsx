@@ -56,7 +56,7 @@ function BubbleEffect({ bubbles }) {
 /* ─────────────────────────────────────────────────────────
    CHARACTER BUTTON
 ────────────────────────────────────────────────────────── */
-function CharacterButton({ src, alt, label, glowColor, onClick, delay, amplitude, rotate, onBubbleBurst }) {
+function CharacterButton({ src, alt, label, glowColor, onClick, delay, amplitude, rotate, onBubbleBurst, imgSize }) {
   const [pressed, setPressed] = useState(false)
   const buttonRef = useRef(null)
 
@@ -109,7 +109,12 @@ function CharacterButton({ src, alt, label, glowColor, onClick, delay, amplitude
           <img
             src={src}
             alt={alt}
-            style={{ width: '40%', height: '40%', display: 'block', objectFit: 'cover' }}
+            style={{
+              width: imgSize ?? 'clamp(72px, 20vw, 105px)',
+              height: 'auto',
+              display: 'block',
+              objectFit: 'contain',
+            }}
           />
         </motion.div>
 
@@ -318,7 +323,7 @@ export default function Hero({ info, onCharacterTap }) {
         <p
           className="font-body"
           style={{
-            fontSize: 27,
+            fontSize: 'clamp(13px, 3.8vw, 20px)',
             color: 'rgba(255, 255, 255, 0.42)',
             marginTop: 8,
             fontStyle: 'italic',
@@ -329,7 +334,7 @@ export default function Hero({ info, onCharacterTap }) {
       </motion.div>
 
       {/* ══ FLOUNDER  (top-left) ══════════════════════════════ */}
-      <div style={{ position: 'absolute', top: '25%', left: '4%' }}>
+      <div style={{ position: 'absolute', top: '25%', left: '3%' }}>
         <CharacterButton
           src="https://raw.githubusercontent.com/jaredgg17/audio/5542bbc0dd7228cf2a22c8620363b9a09960ee40/taqueria/cadcec1883d7133496e1e13d72191f06-removebg-preview.png"
           alt="Flounder — el pez amigo de Ariel"
@@ -338,6 +343,7 @@ export default function Hero({ info, onCharacterTap }) {
           delay={0}
           amplitude={14}
           rotate={3}
+          imgSize="clamp(72px, 20vw, 105px)"
           onClick={() => onCharacterTap('flounder')}
           onBubbleBurst={handleBubbleBurst}
         />
@@ -367,9 +373,9 @@ export default function Hero({ info, onCharacterTap }) {
             src="https://raw.githubusercontent.com/jaredgg17/audio/main/IMG-20260508-WA0031-removebg-preview.png"
             alt="Ariel la Sirenita"
             style={{
-              width: 130,
-              height: 185,
-              objectFit: 'cover',
+              width: 'clamp(95px, 30vw, 145px)',
+              height: 'auto',
+              objectFit: 'contain',
               borderRadius: '0% 0% 0% 0%',
               border: '0px solid rgba(155, 89, 182, 0.45)',
               display: 'block',
@@ -390,14 +396,14 @@ export default function Hero({ info, onCharacterTap }) {
           style={{
             display: 'inline-block',
             marginTop: 14,
-            padding: '11px 22px',
+            padding: 'clamp(9px, 2vw, 12px) clamp(14px, 4vw, 22px)',
             background:
               'linear-gradient(135deg, rgba(25, 135, 84, 0.35), rgba(0, 180, 216, 0.28))',
             border: '1px solid rgba(0, 230, 255, 0.48)',
             borderRadius: 22,
             color: '#90E0EF',
             textDecoration: 'none',
-            fontSize: 11,
+            fontSize: 'clamp(9px, 2.5vw, 11px)',
             letterSpacing: '0.08em',
             whiteSpace: 'nowrap',
             boxShadow:
@@ -408,8 +414,8 @@ export default function Hero({ info, onCharacterTap }) {
         </motion.a>
       </FloatingElement>
 
-      {/* ══ SEBASTIÁN  (mid-left) ═════════════════════════════ */}
-      <div style={{ position: 'absolute', top: '35%', left: '50%', width: '80%' }}>
+      {/* ══ SEBASTIÁN  (top-right) ════════════════════════════ */}
+      <div style={{ position: 'absolute', top: '35%', right: '3%' }}>
         <CharacterButton
           src="https://raw.githubusercontent.com/jaredgg17/audio/main/Sebastian_LS_render_1.webp"
           alt="Sebastián el cangrejo"
@@ -418,13 +424,14 @@ export default function Hero({ info, onCharacterTap }) {
           delay={0.8}
           amplitude={10}
           rotate={-3}
+          imgSize="clamp(72px, 20vw, 105px)"
           onClick={() => onCharacterTap('sebastian')}
           onBubbleBurst={handleBubbleBurst}
         />
       </div>
 
-      {/* ══ COFRE / CACHIVACHES  (mid-right) ══════════════════ */}
-      <div style={{ position: 'absolute', top: '50%', left: '10%', width: '100%' }}>
+      {/* ══ COFRE / CACHIVACHES  (bottom-left) ═══════════════ */}
+      <div style={{ position: 'absolute', top: '52%', left: '3%' }}>
         <CharacterButton
           src="https://raw.githubusercontent.com/jaredgg17/audio/main/ChatGPT_Image_11_may_2026__05_47_20_p.m.-removebg-preview.png"
           alt="Cofre de tesoros de Ariel"
@@ -433,6 +440,7 @@ export default function Hero({ info, onCharacterTap }) {
           delay={1.2}
           amplitude={10}
           rotate={2}
+          imgSize="clamp(78px, 22vw, 115px)"
           onClick={() => onCharacterTap('chest')}
           onBubbleBurst={handleBubbleBurst}
         />

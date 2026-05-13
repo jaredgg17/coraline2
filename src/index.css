@@ -127,3 +127,26 @@ body,
   background: rgba(0, 180, 216, 0.4);
   color: #caf0f8;
 }
+
+/* ──────────────────────────────────────────
+   RESPONSIVE — LANDSCAPE MOBILE
+   Reduce el tamaño de las imágenes de personajes
+   cuando la pantalla es muy baja (orientación horizontal)
+────────────────────────────────────────── */
+@media (max-height: 500px) and (orientation: landscape) {
+  .char-btn img {
+    max-width: 60px !important;
+  }
+}
+
+/* ──────────────────────────────────────────
+   SAFE AREAS (notch / home bar en iPhone)
+   Se aplica al root para respetar el notch
+   sin romper el fondo degradado.
+────────────────────────────────────────── */
+#root {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
