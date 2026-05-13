@@ -343,7 +343,7 @@ export default function Hero({ info, onCharacterTap }) {
           delay={0}
           amplitude={14}
           rotate={3}
-          imgSize="clamp(160px, 20vw, 105px)"
+          imgSize="clamp(120px, 20vw, 105px)"
           onClick={() => onCharacterTap('flounder')}
           onBubbleBurst={handleBubbleBurst}
         />
@@ -363,55 +363,35 @@ export default function Hero({ info, onCharacterTap }) {
           textAlign: 'center',
         }}
       >
-        <motion.div
-          className="ariel-glow"
-          initial={{ scale: 0.6, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ type: 'spring', stiffness: 160, damping: 20, delay: 0.5 }}
-        >
-          <img
-            src="https://raw.githubusercontent.com/jaredgg17/audio/main/IMG-20260508-WA0031-removebg-preview.png"
-            alt="Ariel la Sirenita"
-            style={{
-              width: '60%',
-              height: '60%',
-              objectFit: 'contain',
-              borderRadius: '0% 0% 0% 0%',
-              border: '0px solid rgba(155, 89, 182, 0.45)',
-              display: 'block',
-              margin: '0 auto',
-            }}
-          />
-        </motion.div>
-
-        {/* ── WhatsApp RSVP button ── */}
-        <motion.a
+        <a
           href={`https://wa.me/${info.whatsapp}?text=${encodeURIComponent(info.whatsappMsg)}`}
           target="_blank"
           rel="noopener noreferrer"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1, duration: 0.5 }}
-          className="font-display animate-glow-pulse"
-          style={{
-            display: 'inline-block',
-            marginTop: 14,
-            padding: 'clamp(9px, 2vw, 12px) clamp(14px, 4vw, 22px)',
-            background:
-              'linear-gradient(135deg, rgba(25, 135, 84, 0.35), rgba(0, 180, 216, 0.28))',
-            border: '1px solid rgba(0, 230, 255, 0.48)',
-            borderRadius: 22,
-            color: '#90E0EF',
-            textDecoration: 'none',
-            fontSize: 'clamp(9px, 2.5vw, 11px)',
-            letterSpacing: '0.08em',
-            whiteSpace: 'nowrap',
-            boxShadow:
-              '0 0 18px rgba(0, 230, 255, 0.35), 0 0 36px rgba(0, 180, 216, 0.18)',
-          }}
+          style={{ display: 'block', textDecoration: 'none', cursor: 'pointer' }}
         >
-          ✦ Confirmar Asistencia ✦
-        </motion.a>
+          <motion.div
+            className="ariel-glow"
+            initial={{ scale: 0.6, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ type: 'spring', stiffness: 160, damping: 20, delay: 0.5 }}
+            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.05 }}
+          >
+            <img
+              src="https://raw.githubusercontent.com/jaredgg17/audio/main/IMG-20260508-WA0031-removebg-preview.png"
+              alt="Ariel la Sirenita"
+              style={{
+                width: '60%',
+                height: '60%',
+                objectFit: 'contain',
+                borderRadius: '0% 0% 0% 0%',
+                border: '0px solid rgba(155, 89, 182, 0.45)',
+                display: 'block',
+                margin: '0 auto',
+              }}
+            />
+          </motion.div>
+        </a>
       </FloatingElement>
 
       {/* ══ SEBASTIÁN  (top-right) ════════════════════════════ */}
@@ -424,7 +404,7 @@ export default function Hero({ info, onCharacterTap }) {
           delay={0.8}
           amplitude={10}
           rotate={-3}
-          imgSize="clamp(160px, 20vw, 105px)"
+          imgSize="clamp(120px, 20vw, 105px)"
           onClick={() => onCharacterTap('sebastian')}
           onBubbleBurst={handleBubbleBurst}
         />
@@ -440,7 +420,7 @@ export default function Hero({ info, onCharacterTap }) {
           delay={1.2}
           amplitude={10}
           rotate={2}
-          imgSize="clamp(160px, 22vw, 115px)"
+          imgSize="clamp(120px, 22vw, 115px)"
           onClick={() => onCharacterTap('chest')}
           onBubbleBurst={handleBubbleBurst}
         />
