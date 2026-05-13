@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ──────────────────────────────────────────
+   BASE RESET
+────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ──────────────────────────────────────────
+   TYPOGRAPHY UTILITIES
+────────────────────────────────────────── */
+.font-display {
+  font-family: 'Cinzel Decorative', serif;
+}
+.font-body {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* ──────────────────────────────────────────
+   SHIMMER TEXT (gold & ocean variants)
+────────────────────────────────────────── */
+.shimmer-gold {
+  background: linear-gradient(
+    90deg,
+    #ffd700,
+    #fff8dc,
+    #ffd700,
+    #ffdf80,
+    #ffd700
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer-text 2.5s linear infinite;
+}
+
+.shimmer-ocean {
+  background: linear-gradient(
+    90deg,
+    #00e5ff,
+    #90e0ef,
+    #00b4d8,
+    #caf0f8,
+    #00e5ff
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer-text 3s linear infinite;
+}
+
+/* ──────────────────────────────────────────
+   GLASSMORPHISM
+────────────────────────────────────────── */
+.glass {
+  background: rgba(5, 25, 60, 0.82);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 230, 255, 0.25);
+}
+
+.glass-light {
+  background: rgba(10, 46, 82, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 230, 255, 0.2);
+}
+
+/* ──────────────────────────────────────────
+   CHARACTER GLOW ON HOVER
+────────────────────────────────────────── */
+.char-btn {
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.char-btn:hover,
+.char-btn:active {
+  transform: scale(1.08);
+}
+
+/* ──────────────────────────────────────────
+   ARIEL AMBIENT GLOW
+────────────────────────────────────────── */
+.ariel-glow {
+  animation: ariel-glow 3s ease-in-out infinite;
+}
+
+@keyframes ariel-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 8px rgba(155, 89, 182, 0.5))
+            drop-shadow(0 0 18px rgba(0, 180, 216, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 22px rgba(155, 89, 182, 0.95))
+            drop-shadow(0 0 40px rgba(0, 180, 216, 0.7));
+  }
+}
+
+/* ──────────────────────────────────────────
+   SCROLLBAR HIDE (for mobile feel)
+────────────────────────────────────────── */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* ──────────────────────────────────────────
+   SELECTION COLOR
+────────────────────────────────────────── */
+::selection {
+  background: rgba(0, 180, 216, 0.4);
+  color: #caf0f8;
+}
