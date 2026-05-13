@@ -521,7 +521,7 @@ export default function Hero({ info, onCharacterTap }) {
         className="font-display absolute bottom-7 left-0 right-0 text-center"
         style={{ fontSize: 9, letterSpacing: '0.22em', color: 'rgba(144, 224, 239, 0.28)' }}
       >
-        ∼ Creado por <a href="https://www.instagram.com/21studio" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300 font-bold">21 STUDIO</a> ● todos los derechos reservados ∼
+        ∼ Creado por <a href="https://www.instagram.com/21studio.mx?igsh=dWMyZ2V4dzAzd3ly" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300 font-bold">21 STUDIO</a> ● todos los derechos reservados ∼
       </p>
     </div>
   )
