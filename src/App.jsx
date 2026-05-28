@@ -23,7 +23,7 @@ import SplashScreen from './components/SplashScreen'
 const PARTY_INFO = {
   childName: 'Coraline',
   age: '2',
-  date: 'Sábado, 25 de Julio 2026',
+  date: 'Sábado, 01 de Agosto 2026',
   time: '14:30 PM ',
   location: 'Ursulo galván\nDiaz ordaz, 96620\nAgua dulce, Ver.',
   mapsUrl: 'https://maps.app.goo.gl/KMBCDMzDVHxY8LpF9?g_st=ac',
