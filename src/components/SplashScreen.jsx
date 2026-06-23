@@ -80,7 +80,7 @@ export default function SplashScreen({ onEnter }) {
           }}
         >
           <img
-            src="https://raw.githubusercontent.com/jaredgg17/audio/main/IMG-20260511-WA0043.jpg"
+            src="https://raw.githubusercontent.com/jaredgg17/under-the-sea-invite/main/WhatsApp%20Image%202026-06-23%20at%2000.40.47.jpeg"
             alt="Coraline"
             style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
           />
